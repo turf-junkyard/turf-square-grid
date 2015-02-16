@@ -3,6 +3,24 @@ var point = require('turf-point');
 var polygon = require('turf-polygon');
 var distance = require('turf-distance');
 
+/**
+ * Takes a bounding box and a cell depth and returns a {@link FeatureCollection} of {@link Point} features in a grid.
+ *
+ * @module turf/square-grid
+ * @category interpolation
+ * @param {Array<number>} extent extent in [minX, minY, maxX, maxY] order
+ * @param {Number} cellWidth width of each cell
+ * @param {String} units units to use for cellWidth
+ * @return {FeatureCollection} grid as FeatureCollection with {@link Polygon} features
+ * @example
+ * var extent = [-77.3876953125,38.71980474264239,-76.9482421875,39.027718840211605];
+ * var cellWidth = 10;
+ * var units = 'miles';
+ *
+ * var squareGrid = turf.grid(extent, cellWidth, units);
+ *
+ * //=squareGrid
+ */
 module.exports = function (bbox, cell, units) {
   var fc = featurecollection([]);
   var xFraction = cell / (distance(point([bbox[0], bbox[1]]), point([bbox[2], bbox[1]]), units));

@@ -1,5 +1,7 @@
 # turf-square-grid
 
+[![build status](https://secure.travis-ci.org/Turfjs/turf-square-grid.png)](http://travis-ci.org/Turfjs/turf-square-grid)
+
 
 
 

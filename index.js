@@ -28,5 +28,5 @@ module.exports = function (bbox, cell, units) {
     currentX += cellWidth;
   }
   
-  return fc
+  return fc;
 }

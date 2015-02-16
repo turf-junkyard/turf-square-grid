@@ -21,18 +21,27 @@ test('square-grid', function (t) {
         -76.9482421875,
         39.027718840211605
       ];
+  var bbox4 = [
+    63.6328125,
+    11.867350911459308,
+    75.234375,
+    47.754097979680026
+  ];
 
   var grid1 = grid(bbox1, 20, 'miles');
   var grid2 = grid(bbox2, 5, 'miles');
   var grid3 = grid(bbox3, 2, 'miles');
+  var grid4 = grid(bbox4, 50, 'miles');
 
   t.ok(grid1.features.length);
   t.ok(grid2.features.length);
   t.ok(grid3.features.length);
+  t.ok(grid4.features.length);
 
   fs.writeFileSync(__dirname+'/fixtures/out/grid1.geojson', JSON.stringify(grid1,null,2));
   fs.writeFileSync(__dirname+'/fixtures/out/grid2.geojson', JSON.stringify(grid2,null,2));
   fs.writeFileSync(__dirname+'/fixtures/out/grid3.geojson', JSON.stringify(grid3,null,2));
+  fs.writeFileSync(__dirname+'/fixtures/out/grid4.geojson', JSON.stringify(grid4,null,2));
 
   t.end();
 });

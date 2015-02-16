@@ -17,7 +17,7 @@ var distance = require('turf-distance');
  * var cellWidth = 10;
  * var units = 'miles';
  *
- * var squareGrid = turf.grid(extent, cellWidth, units);
+ * var squareGrid = turf.squareGrid(extent, cellWidth, units);
  *
  * //=squareGrid
  */

@@ -24,7 +24,7 @@ var extent = [-77.3876953125,38.71980474264239,-76.9482421875,39.027718840211605
 var cellWidth = 10;
 var units = 'miles';
 
-var squareGrid = turf.grid(extent, cellWidth, units);
+var squareGrid = turf.squareGrid(extent, cellWidth, units);
 
 //=squareGrid
 ```

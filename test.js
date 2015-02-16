@@ -1,5 +1,6 @@
 var test = require('tape');
 var grid = require('./');
+var fs = require('fs');
 
 test('square-grid', function (t) {
   var bbox1 = [
@@ -21,17 +22,17 @@ test('square-grid', function (t) {
         39.027718840211605
       ];
 
-  var grid1 = grid(bbox, 50, 'miles');
-  var grid2 = grid(bbox. 5, 'miles');
-  var grid3 = grid(bbox, 2, 'kilometers');
+  var grid1 = grid(bbox1, 20, 'miles');
+  var grid2 = grid(bbox2, 5, 'miles');
+  var grid3 = grid(bbox3, 2, 'kilometers');
 
   t.ok(grid1.features.length);
   t.ok(grid2.features.length);
   t.ok(grid3.features.length);
 
-  fs.writeFileSync(__dirname+'/fixtures/out/grid1.geojson', JSON.stringify(grid1));
-  fs.writeFileSync(__dirname+'/fixtures/out/grid2.geojson', JSON.stringify(grid2));
-  fs.writeFileSync(__dirname+'/fixtures/out/grid3.geojson', JSON.stringify(grid3));
+  fs.writeFileSync(__dirname+'/fixtures/out/grid1.geojson', JSON.stringify(grid1,null,2));
+  fs.writeFileSync(__dirname+'/fixtures/out/grid2.geojson', JSON.stringify(grid2,null,2));
+  fs.writeFileSync(__dirname+'/fixtures/out/grid3.geojson', JSON.stringify(grid3,null,2));
 
   t.end();
 });

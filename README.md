@@ -1,1 +1,1 @@
-# turf-regular-grid
+# turf-square-grid

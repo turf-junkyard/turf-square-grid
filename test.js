@@ -24,7 +24,7 @@ test('square-grid', function (t) {
 
   var grid1 = grid(bbox1, 20, 'miles');
   var grid2 = grid(bbox2, 5, 'miles');
-  var grid3 = grid(bbox3, 2, 'kilometers');
+  var grid3 = grid(bbox3, 2, 'miles');
 
   t.ok(grid1.features.length);
   t.ok(grid2.features.length);

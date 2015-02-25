@@ -4,7 +4,7 @@ var polygon = require('turf-polygon');
 var distance = require('turf-distance');
 
 /**
- * Takes a bounding box and a cell depth and returns a {@link FeatureCollection} of {@link Point} features in a grid.
+ * Takes a bounding box and a cell depth and returns a {@link FeatureCollection} of {@link Polygon} features in a grid.
  *
  * @module turf/square-grid
  * @category interpolation

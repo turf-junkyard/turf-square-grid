@@ -7,7 +7,7 @@
 
 ### `turf.square-grid(extent, cellWidth, units)`
 
-Takes a bounding box and a cell depth and returns a FeatureCollection of Point features in a grid.
+Takes a bounding box and a cell depth and returns a FeatureCollection of Polygon features in a grid.
 
 
 ### Parameters

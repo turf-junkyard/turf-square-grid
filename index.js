@@ -4,14 +4,14 @@ var polygon = require('turf-polygon');
 var distance = require('turf-distance');
 
 /**
- * Takes a bounding box and a cell depth and returns a {@link FeatureCollection} of {@link Polygon} features in a grid.
+ * Takes a bounding box and a cell depth and returns a set of polygons in a grid.
  *
  * @module turf/square-grid
  * @category interpolation
  * @param {Array<number>} extent extent in [minX, minY, maxX, maxY] order
  * @param {Number} cellWidth width of each cell
  * @param {String} units units to use for cellWidth
- * @return {FeatureCollection} grid as FeatureCollection with {@link Polygon} features
+ * @return {FeatureCollection<Polygon>} grid a grid of polygons
  * @example
  * var extent = [-77.3876953125,38.71980474264239,-76.9482421875,39.027718840211605];
  * var cellWidth = 10;

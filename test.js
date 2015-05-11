@@ -27,21 +27,25 @@ test('square-grid', function (t) {
     75.234375,
     47.754097979680026
   ];
+  var bbox5 = [-180, -90, 180, 90];
 
   var grid1 = grid(bbox1, 20, 'miles');
   var grid2 = grid(bbox2, 5, 'miles');
   var grid3 = grid(bbox3, 2, 'miles');
   var grid4 = grid(bbox4, 50, 'miles');
+  var grid5 = grid(bbox5, 10, 'degrees');
 
   t.ok(grid1.features.length);
   t.ok(grid2.features.length);
   t.ok(grid3.features.length);
   t.ok(grid4.features.length);
+  t.ok(grid5.features.length);
 
   fs.writeFileSync(__dirname+'/fixtures/out/grid1.geojson', JSON.stringify(grid1,null,2));
   fs.writeFileSync(__dirname+'/fixtures/out/grid2.geojson', JSON.stringify(grid2,null,2));
   fs.writeFileSync(__dirname+'/fixtures/out/grid3.geojson', JSON.stringify(grid3,null,2));
   fs.writeFileSync(__dirname+'/fixtures/out/grid4.geojson', JSON.stringify(grid4,null,2));
+  fs.writeFileSync(__dirname+'/fixtures/out/grid5.geojson', JSON.stringify(grid5,null,2));
 
   t.end();
 });

@@ -23,9 +23,20 @@ var distance = require('turf-distance');
  */
 module.exports = function (bbox, cell, units) {
   var fc = featurecollection([]);
-  var xFraction = cell / (distance(point([bbox[0], bbox[1]]), point([bbox[2], bbox[1]]), units));
+
+  var xDistance, yDistance;
+
+  if (units === 'degrees') {
+    xDistance = bbox[2] - bbox[0];
+  } else {
+    xDistance = distance(point([bbox[0], bbox[1]]), point([bbox[2], bbox[1]]), units);
+  }
+
+  yDistance = distance(point([bbox[0], bbox[1]]), point([bbox[0], bbox[3]]), units);
+
+  var xFraction = cell / xDistance;
   var cellWidth = xFraction * (bbox[2] - bbox[0]);
-  var yFraction = cell / (distance(point([bbox[0], bbox[1]]), point([bbox[0], bbox[3]]), units));
+  var yFraction = cell / yDistance;
   var cellHeight = yFraction * (bbox[3] - bbox[1]);
 
   var currentX = bbox[0];
@@ -45,6 +56,6 @@ module.exports = function (bbox, cell, units) {
     }
     currentX += cellWidth;
   }
-  
+
   return fc;
 }
